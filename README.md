@@ -1,64 +1,93 @@
-# Decision Trees & Random Forest — Day 32 Assignments
+# ML Assignments — Week 6 | Day 33
 
-**Week 6 · Day 32 | Machine Learning & AI**
+**Week 6 | Machine Learning & AI**
 IIT Gandhinagar | PG Diploma in AI-ML & Agentic AI Engineering
+
+---
 
 ## Overview
 
-This repository contains take-home assignments for Day 32 covering **Decision Trees**, **Random Forest**, hyperparameter tuning, feature importance, and model comparison.
+This repository contains take-home assignments exclusively for **Day 33** (SVM & KNN) of Week 6.
 
-## Repository Structure
+All scripts have been fully optimized to include executable code only, free from extraneous comments and print statements, storing outputs in predefined variables.
 
-### AM Session — Decision Trees & Random Forest (Theory + Implementation)
+---
 
-| File | Part | Description |
-|------|------|-------------|
-| `part-a-am.py` | Concept Application (40%) | Loan approval system — synthetic data, DT rules extraction, RF with RandomizedSearchCV, permutation importance, deployment recommendation |
-| `part-b-am.py` | Stretch Problem (30%) | ExtraTrees vs RandomForest — splitting differences, speed benchmark, performance comparison |
-| `part-c-am.py` | Interview Ready (20%) | Bias-variance tradeoff, `plot_overfitting_curve()` function, debugging identical train/test accuracy |
-| `part-d-am.py` | AI-Augmented (10%) | Matplotlib infographic — DT vs RF vs Logistic Regression for non-technical audience |
+## Day 33 — SVM & KNN
 
-### PM Session — Decision Trees & Random Forest: Applied
+### AM Session
 
-| File | Part | Description |
-|------|------|-------------|
-| `part-a-pm.py` | Concept Application (40%) | Insurance fraud detection — cost-sensitive evaluation (FN = 10× FP), DT fraud rules, RF tuned for recall |
-| `part-b-pm.py` | Stretch Problem (30%) | Gradient Boosting preview — bagging vs boosting comparison, resource links |
-| `part-c-pm.py` | Interview Ready (20%) | 1000 vs 100 trees tradeoff, `compare_models()` function, debugging unstable feature importances |
-| `part-d-pm.py` | AI-Augmented (10%) | OOB error explanation with analogy, evaluation, critique, and code demo |
+| File                 | Part                      | Description                                                                                                                    |
+| -------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `part-a-am-d33.py` | Concept Application (40%) | Handwritten digit classifier — SVM (RBF) with GridSearchCV, KNN with optimal K, confusion matrices, most confused digit pairs |
+| `part-b-am-d33.py` | Stretch Problem (30%)     | FAISS approximate nearest neighbors — build FAISS index on digits dataset, speed comparison vs sklearn KNN for 1000 queries   |
+| `part-c-am-d33.py` | Interview Ready (20%)     | SVM vs Logistic Regression conceptual answer,`knn_from_scratch()` with NumPy only, debug broken SVM (0.50 accuracy)          |
+| `part-d-am-d33.py` | AI-Augmented (10%)        | SVM decision boundary visualization as C varies (0.01→100), kernel trick analogy, circles demo                                |
+
+### PM Session
+
+| File                 | Part                      | Description                                                                                                       |
+| -------------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `part-a-pm-d33.py` | Concept Application (40%) | 8-algorithm cheat sheet — all Week 6 algorithms on Breast Cancer dataset with 5-fold CV, ranked bar chart        |
+| `part-b-pm-d33.py` | Stretch Problem (30%)     | Text classification — TF-IDF + LinearSVC pipeline vs Logistic Regression on 20newsgroups (4 categories)          |
+| `part-c-pm-d33.py` | Interview Ready (20%)     | Algorithm selection for p>>n problem,`model_selection_report()` with paired t-test, 3 fixes for overfitting SVM |
+| `part-d-pm-d33.py` | AI-Augmented (10%)        | Dark-themed algorithm selection decision guide — 4 decision boxes, 8 quick-reference cards, edge cases visual    |
+
+---
 
 ## Topics Covered
 
-- Gini impurity, entropy, information gain
-- Overfitting & pruning, Decision Tree hyperparameters
-- Bagging & bootstrap, feature randomness
-- Random Forest hyperparameters, feature importance (MDI vs permutation)
-- GridSearchCV, RandomizedSearchCV, cross-validation
-- Cost-sensitive evaluation, interpretability vs accuracy tradeoff
-- ExtraTrees, Gradient Boosting (preview), OOB error estimation
+- Maximum margin classifier, hard/soft margin, C parameter
+- Kernel trick — linear, polynomial, RBF; gamma parameter
+- Support vectors, GridSearchCV for SVM
+- KNN algorithm, distance metrics, choosing K
+- Curse of dimensionality, scaling importance
+- FAISS approximate nearest neighbors
+- TF-IDF + SVM pipeline for text classification
+- Algorithm selection methodology
+
+---
 
 ## Prerequisites
 
 ```bash
-pip install numpy pandas scikit-learn matplotlib
+pip install numpy pandas scikit-learn matplotlib scipy
+
+# Part B AM only (FAISS):
+pip install faiss-cpu
 ```
 
 ## How to Run
 
 ```bash
-# AM Session
-python part-a-am.py
-python part-b-am.py
-python part-c-am.py
-python part-d-am.py
+# Day 33 AM
+python part-a-am-d33.py
+python part-b-am-d33.py
+python part-c-am-d33.py
+python part-d-am-d33.py
 
-# PM Session
-python part-a-pm.py
-python part-b-pm.py
-python part-c-pm.py
-python part-d-pm.py
+# Day 33 PM
+python part-a-pm-d33.py
+python part-b-pm-d33.py
+python part-c-pm-d33.py
+python part-d-pm-d33.py
 ```
+
+## Output Files Generated
+
+| File                                | Generated By         |
+| ----------------------------------- | -------------------- |
+| `d33_confusion_matrices.png`      | `part-a-am-d33.py` |
+| `d33_knn_k_vs_accuracy.png`       | `part-a-am-d33.py` |
+| `d33_svm_C_boundary.png`          | `part-d-am-d33.py` |
+| `d33_kernel_trick_demo.png`       | `part-d-am-d33.py` |
+| `d33_pm_algorithm_comparison.png` | `part-a-pm-d33.py` |
+| `d33_pm_text_classification.png`  | `part-b-pm-d33.py` |
+| `d33_pm_algorithm_guide.png`      | `part-d-pm-d33.py` |
+
+---
 
 ## Author
 
-Avi Chattopadhyay
+Avik Chatterjee
+IIT Gandhinagar | PG Diploma in AI-ML & Agentic AI Engineering
